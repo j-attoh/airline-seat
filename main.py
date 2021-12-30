@@ -22,7 +22,7 @@ class InputError(Error):
 
 
 def compute_passenger_seating(
-    desiring=[[3, 2], [4, 3], [2, 3], [3, 4]], intimated_num_of_passengers=30
+    seating_array=[[3, 2], [4, 3], [2, 3], [3, 4]], intimated_num_of_passengers=30
 ):
     """
     checking errors
@@ -35,7 +35,7 @@ def compute_passenger_seating(
 
     """
     seats = []
-    for item in desiring:
+    for item in seating_array:
         output = []
         for row in range(item[1]):
             output.append(["X" for _ in range(item[0])])
@@ -45,29 +45,29 @@ def compute_passenger_seating(
     WINDOW_SEATS_FULLY_FILLED = False
     MIDDLE_SEATS_FULLY_FILLED = False
 
-    NUM_OF_SEATS = len(desiring)
+    NUM_OF_SEATS = len(seating_array)
 
     """
-    if not isinstance(desiring, List):
-        raise InputError(desiring, "Must be A List")
-    for item in desiring:
+    if not isinstance(seating_array, List):
+        raise InputError(seating_array, "Must be A List")
+    for item in seating_array:
         if len(item) != 2:
             raise InputError(item, "Must be a 2D array")
         if not [int, int] == [type(x) for x in item]:
             raise InputError(item, "Must be 2D integer array")
 
-    if sum(x[0] * x[1] for x in desiring) < intimated_num_of_passengers:
+    if sum(x[0] * x[1] for x in seating_array) < intimated_num_of_passengers:
         raise InputError(
             intimated_num_of_passengers,
             (
-                f'Seating Capacity of "{sum(x[0] * x[1] for x in desiring )}" '
+                f'Seating Capacity of "{sum(x[0] * x[1] for x in seating_array )}" '
                 f'Insufficient less than "{intimated_num_of_passengers}"',
             ),
         )
 
-    NUM_OF_SEATING_GROUPS = len(desiring)  # count of number of 2D arrays
-    cols = [x[0] for x in desiring]
-    rows = [x[1] for x in desiring]
+    NUM_OF_SEATING_GROUPS = len(seating_array)  # count of number of 2D arrays
+    cols = [x[0] for x in seating_array]
+    rows = [x[1] for x in seating_array]
 
     easy_seating = []
 
