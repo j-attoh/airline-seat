@@ -27,6 +27,10 @@ def compute_passenger_seating(
     """
     Computing airline seating arrangement in line with specified rules
 
+    Attributes:
+        seating_array -- 2D array 
+        intimated_num_of_passengers -- desired number of passengers
+
     checking errors
         if intimated_num_of_passengers greater than capacity
         if elements are not 2D arrays
