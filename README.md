@@ -5,7 +5,7 @@
 ## running app
     make app
 
-# run test using  -- requires pytest to be installed 
+# running test -- requires pytest to be installed 
   ## installing pytest 
     pip install pytest 
    ## running test
