@@ -25,11 +25,12 @@ def compute_passenger_seating(
     seating_array=[[3, 2], [4, 3], [2, 3], [3, 4]], intimated_num_of_passengers=30
 ):
     """
+    Computing airline seating arrangement in line with specified rules
+
     checking errors
         if intimated_num_of_passengers greater than capacity
         if elements are not 2D arrays
         if elements are not integers
-
 
     """
 
@@ -40,12 +41,6 @@ def compute_passenger_seating(
         for row in range(item[1]):
             output.append(["X" for _ in range(item[0])])
         seats.append(output)
-
-    AISLE_FULLY_FILLED = False
-    WINDOW_SEATS_FULLY_FILLED = False
-    MIDDLE_SEATS_FULLY_FILLED = False
-
-    NUM_OF_SEATS = len(seating_array)
 
     """
     if not isinstance(seating_array, List):
@@ -132,7 +127,6 @@ def compute_passenger_seating(
     for seat in easy_seating:
         print(seat)
     """
-
 
     output = [[] for _ in range(NUM_OF_SEATING_GROUPS)]
     for (index, seat) in enumerate(easy_seating):
